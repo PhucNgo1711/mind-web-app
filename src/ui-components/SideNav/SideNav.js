@@ -3,10 +3,14 @@ import { Layout, Menu, Icon, Row, Avatar } from 'antd';
 import 'antd/dist/antd.css';
 import './SideNav.css';
 
+import PgAccountHeader from '../Account/PgAccountHeader';
+import PgAccountContent from "../Account/PgAccountContent";
 import PgCreateHeader from '../Create/PgCreateHeader';
 import PgCreateContent from "../Create/PgCreateContent";
 import PgCollabHeader from '../Collab/PgCollabHeader';
 import PgCollabContent from '../Collab/PgCollabContent';
+import PgExpHeader from '../Exp/PgExpHeader';
+import PgExpContent from '../Exp/PgExpContent';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -14,7 +18,7 @@ export default class SideNav extends Component {
     state = {
       collapsed: false,
       header: 'Create',
-      // header: 'Collaboration',
+      // header: 'Experience',
       searchText: 'Search Projects'
     };
   
@@ -69,7 +73,16 @@ export default class SideNav extends Component {
       let header;
       let pageContent;
       
-      if (this.state.header === 'Create') {
+      if (this.state.header === 'Account') {
+        header = (
+          <PgAccountHeader header={ this.state.header }></PgAccountHeader>
+        );
+    
+        pageContent = (
+          <PgAccountContent header={ this.state.header }></PgAccountContent>
+        );
+      }
+      else if (this.state.header === 'Create') {
         header = (
           <PgCreateHeader header={ this.state.header } searchText={ this.state.searchText }></PgCreateHeader>
         );
@@ -87,6 +100,15 @@ export default class SideNav extends Component {
           <PgCollabContent header={ this.state.header }></PgCollabContent>
         );
       }
+      else if (this.state.header === 'Experience') {
+        header = (
+          <PgExpHeader header={ this.state.header } searchText={ this.state.searchText }></PgExpHeader>
+        );
+    
+        pageContent = (
+          <PgExpContent header={ this.state.header }></PgExpContent>
+        );
+      }
 
       return (
         <Layout style={{ minHeight: '100vh' }}>
@@ -102,7 +124,7 @@ export default class SideNav extends Component {
             
             <Row onClick={ this.openAccount } style={{ cursor: 'pointer'}}>
               <Row>
-                <Avatar size= {64} style={{ backgroundColor: '#87d068' }} icon="user" />
+                <Avatar size= {64} style={{ backgroundColor: '#87d068' }} src="http://dl.hiapphere.com/data/icon/201412/HiAppHere_com_com.studio8apps.instasizenocrop.png" />
               </Row>
               
               <Row>
@@ -138,10 +160,10 @@ export default class SideNav extends Component {
             </Menu>
           </Sider>
           <Layout>
-            <Header style={{ background: '#fff', padding: '0 2.1em 0 2em', fontSize: '1.5em' }}>
+            <Header style={{ background: '#fff', padding: '0 2.1em 0 2em', fontSize: '1.8em' }}>
               { header }
             </Header>
-            <Content style={{ padding: '24px', background: '#F5F9FC', minHeight: 280 }}>
+            <Content style={{ padding: '24px', background: '#f5f5f5', height: 'fit-content' }}>
               { pageContent }
             </Content>
             <Footer style={{ textAlign: 'center' }}>

@@ -4,7 +4,7 @@ import 'antd/dist/antd.css';
 
 const Search = Input.Search;
 
-export default class PageHeader extends Component {
+export default class PgExpHeader extends Component {
    handleMenuFilterLeftClick = (e) => {
       console.log('click', e);
     }
