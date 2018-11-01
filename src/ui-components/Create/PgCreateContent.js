@@ -57,7 +57,7 @@ export default class PgCreateContent extends Component {
                <PgProjectTimeline></PgProjectTimeline>
             </Modal>
 
-            <Card bordered={false} style={{ margin: '0 1.4em 0 1.4em', padding: '0 1em 0 1em' }}>
+            <Card bordered={false} style={{ margin: '0 2.4em', padding: '0 1em 0 1em' }}>
             <List
                itemLayout="vertical"
                size="large"

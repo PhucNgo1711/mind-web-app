@@ -5,16 +5,16 @@
   "dependencies": {
     "antd": "^3.8.2",
     "babel-plugin-import": "^1.8.0",
+    "concurrently": "^3.5.0",
     "express": "^4.16.3",
+    "google-map-react": "^1.0.6",
     "react": "^16.4.2",
     "react-app-rewire-less": "^2.1.2",
     "react-app-rewired": "^1.5.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4",
-    "concurrently": "^3.5.0"
+    "react-scripts": "1.1.4"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "concurrently --kill-others-on-fail \"react-app-rewired start\" \"node ./src/server.js\"",
     "heroku-postbuild": "npm install && npm install --only=dev --no-shrinkwrap && npm run build",

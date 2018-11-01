@@ -14,7 +14,7 @@ export default class PageHeader extends Component {
    render() {
       return (
          <div>
-            <Card bordered={false} style={{ margin: '0 1.4em 0 1.4em', height: '-webkit-fill-available' }}>
+            <Card bordered={false} style={{ margin: '0 1.4em', height: '-webkit-fill-available' }}>
             {/* padding: '0 1em 0 1em' */}
                <Row type="flex" justify="start">
                   <Col span={8}>
@@ -69,12 +69,16 @@ export default class PageHeader extends Component {
                   </Col>
                </Row>
 
-               <Divider></Divider>
+               {/* <Divider></Divider> */}
+
+               <br></br>
 
                <Row>
                   {/* <div className="card-container"> */}
-                     <Tabs type="card" tabPosition="left">
-                        <TabPane tab="Bio" key="1" style={{ textAlign: 'left' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</TabPane>
+                     <Tabs tabPosition="top" style={{ textAlign: 'left', float: 'left', padding: '0 1em' }}>
+                        <TabPane tab="Bio" key="1" style={{ textAlign: 'left' }}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna et pharetra pharetra massa massa ultricies mi quis hendrerit. Lacus vestibulum sed arcu non. Egestas integer eget aliquet nibh praesent tristique magna sit. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna. Elementum eu facilisis sed odio. Nec sagittis aliquam malesuada bibendum arcu. Sit amet dictum sit amet justo donec. Pellentesque habitant morbi tristique senectus. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Ultricies integer quis auctor elit sed vulputate. Varius vel pharetra vel turpis nunc eget lorem dolor sed. Dignissim cras tincidunt lobortis feugiat. Tellus molestie nunc non blandit massa. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla.&#13;&#10;Mollis nunc sed id semper risus. Etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum. Ac turpis egestas integer eget aliquet nibh praesent tristique. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Sem et tortor consequat id porta nibh venenatis cras. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Tempor orci eu lobortis elementum nibh. Quis viverra nibh cras pulvinar mattis nunc. In est ante in nibh mauris cursus mattis. Porttitor eget dolor morbi non arcu risus quis. Neque gravida in fermentum et sollicitudin ac orci phasellus egestas. Arcu bibendum at varius vel pharetra vel turpis.
+                        </TabPane>
                         <TabPane tab="Ideas" key="2">
                            <PgCreateContent></PgCreateContent>
                         </TabPane>

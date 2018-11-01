@@ -11,9 +11,10 @@ import PgCollabHeader from '../Collab/PgCollabHeader';
 import PgCollabContent from '../Collab/PgCollabContent';
 import PgExpHeader from '../Exp/PgExpHeader';
 import PgExpContent from '../Exp/PgExpContent';
+import PgMapHeader from '../Map/PgMapHeader';
+import PgMapContent from '../Map/PgMapContent';
 
 const { Header, Content, Footer, Sider } = Layout;
-
 export default class SideNav extends Component {
     state = {
       collapsed: false,
@@ -109,6 +110,15 @@ export default class SideNav extends Component {
           <PgExpContent header={ this.state.header }></PgExpContent>
         );
       }
+      else if (this.state.header === 'Map') {
+        header = (
+          <PgMapHeader header={ this.state.header } searchText={ this.state.searchText }></PgMapHeader>
+        );
+    
+        pageContent = (
+          <PgMapContent header={ this.state.header }></PgMapContent>
+        );
+      }
 
       return (
         <Layout style={{ minHeight: '100vh' }}>
@@ -118,8 +128,8 @@ export default class SideNav extends Component {
             onCollapse={ this.onCollapse }
           >
             <div className="logo">
-              {/* <img style={{height: inherit}}  src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></img> */}
-              <div style={{ background: '#02223F', height: 'inherit' }}></div>
+              <img style={{height: 'inherit'}}  src="https://lh3.googleusercontent.com/-3081Z-2NLTo/W4bz8ZVcg0I/AAAAAAAAB-4/vVyBdoJV5_4AH7lAt2lj824kt_HAeQ83ACL0BGAYYCw/h216/2018-08-29.png"></img>
+              {/* <div style={{ background: '#02223F', height: 'inherit' }}></div> */}
             </div>
             
             <Row onClick={ this.openAccount } style={{ cursor: 'pointer'}}>
@@ -160,7 +170,7 @@ export default class SideNav extends Component {
             </Menu>
           </Sider>
           <Layout>
-            <Header style={{ background: '#fff', padding: '0 2.1em 0 2em', fontSize: '1.8em' }}>
+            <Header style={{ background: '#fff', padding: '0 2.1em', fontSize: '1.8em' }}>
               { header }
             </Header>
             <Content style={{ padding: '24px', background: '#f5f5f5', height: 'fit-content' }}>

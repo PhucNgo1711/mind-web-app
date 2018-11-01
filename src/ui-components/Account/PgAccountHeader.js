@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Menu, Icon, Input, Row, Col, Dropdown, Button } from 'antd';
+import { Row, Col } from 'antd';
 import 'antd/dist/antd.css';
-
-const Search = Input.Search;
 
 export default class PageHeader extends Component {
    render() {

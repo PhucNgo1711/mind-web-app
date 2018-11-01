@@ -12,6 +12,7 @@ export default class PgExpContent extends Component {
             <Row type="flex" justify="space-around">
                <Col span={11}>
                   <Card
+                  bordered={false}
                   hoverable
                   cover={<img alt="example" src="https://images.pexels.com/photos/958173/pexels-photo-958173.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />}
                   actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
